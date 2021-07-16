@@ -9,12 +9,12 @@ keyword.replace(" ", "+")
 
 
 # create url
-url = "http://suggestqueries.google.com/complete/search?output=chrome&hl=en&gl=us&q=" + keyword
+myurl = "http://suggestqueries.google.com/complete/search?output=chrome&hl=en&gl=us&q=" + keyword
 
 # create the user_agent to request
 ua = UserAgent()
 headers = {"user-agent": ua.chrome}
-response = requests.get(url, headers=headers, verify=False)
+response = requests.get(myurl, headers=headers, verify=False)
 suggestions = json.loads(response.text)
 
 # create a list with response
